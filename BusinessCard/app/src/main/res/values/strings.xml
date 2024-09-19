@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Business Card</string>
+    <string name="user_name">Amir Shayakhmetov</string>
+    <string name="occupation">Golang and Java developer</string>
+    <string name="phone" >+7 (987) 222 22 22</string>
+    <string name="info">AndroidLabs</string>
+    <string name="email">amirkzn3@gmail.com</string>
+</resources>
