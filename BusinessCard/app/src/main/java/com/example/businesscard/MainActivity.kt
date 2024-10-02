@@ -4,15 +4,10 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.MaterialTheme
@@ -58,7 +53,7 @@ fun AndroidLogo(modifier: Modifier = Modifier){
 }
 
 @Composable
-fun StopcicLogo(modifier: Modifier = Modifier){
+fun AppLogo(modifier: Modifier = Modifier){
     val image = painterResource(R.drawable.logo)
 
     Image(painter = image, contentDescription ="android logo",
@@ -116,7 +111,7 @@ fun BusinessCard( modifier: Modifier = Modifier) {
             modifier = Modifier
                 .fillMaxHeight(0.15F)
         ) {
-            StopcicLogo()
+            AppLogo()
         }
         Column  (
             horizontalAlignment = Alignment.CenterHorizontally,
