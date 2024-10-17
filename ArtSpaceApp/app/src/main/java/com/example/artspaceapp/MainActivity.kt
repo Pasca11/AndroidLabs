@@ -41,6 +41,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
+                    ArtSpace()
                 }
             }
         }
@@ -142,7 +143,7 @@ private fun GetImage(imageId: Int):Int{
     return when(imageId){
         1 -> R.drawable.pic1
         2 -> R.drawable.pic2
-        3 -> R.drawable.pic2
+        3 -> R.drawable.pic3
         else -> R.drawable.pic4
     }
 }
