@@ -1,3 +1,15 @@
 <resources>
-    <string name="app_name">ArtSpaceApp</string>
+    <string name="app_name">Art Space App</string>
+
+    <string name="title_1">Лес </string>
+    <string name="description_1">Источник: pngEgg"</string>
+
+    <string name="title_2">Город </string>
+    <string name="description_2">Источник: pngEgg"</string>
+
+    <string name="title_3">Мост</string>
+    <string name="description_3">Источник: pngEgg"</string>
+
+    <string name="title_4">Дуэт</string>
+    <string name="description_4">Источник: pngEgg"</string>
 </resources>

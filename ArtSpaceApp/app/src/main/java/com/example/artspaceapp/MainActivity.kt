@@ -5,8 +5,11 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.runtime.setValue
+import androidx.compose.runtime.getValue
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -16,6 +19,8 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
@@ -42,8 +47,42 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+@Composable
+fun ArtSpace() {
+    var imageId by remember { mutableStateOf(1) }
+
+    Column(
+        modifier = Modifier
+            .fillMaxSize(),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        DisplayArt(imageId)
+        DisplayInfo(imageId)
+        DisplayFooter(
+            imageId = imageId,
+            onAction = { action ->
+                when (action) {
+                    Action.Rewind -> {
+                        imageId = if (imageId == 1) 4 else imageId - 1
+                    }
+                    Action.Next -> {
+                        imageId = if (imageId == 4) 1 else imageId + 1
+                    }
+                }
+            }
+        )
+    }
+}
+
 enum class Action {
     Rewind, Next
+}
+
+@Composable
+fun DisplayArt(imageId: Int) {
+    val image = painterResource(id = GetImage(imageId))
+    Image(painter = image, contentDescription = "desc")
 }
 
 @Composable
